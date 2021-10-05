@@ -1,7 +1,7 @@
 import React from "react";
 
 import Grid from "@mui/material/Grid";
-import BookCard from "../book-card/BookCard";
+import BookCard from "./book-card/BookCard";
 
 const Books = ({ books }) => {
   return (

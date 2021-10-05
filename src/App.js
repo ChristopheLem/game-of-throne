@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Book from "./pages/book/BookPage";
 
 import BooksPage from "./pages/books/BooksPage";
 function App() {
@@ -10,7 +11,7 @@ function App() {
           <BooksPage />
         </Route>
         <Route path="/books/:id">
-          <p>Hello</p>
+          <Book />
         </Route>
         {/* <Route>
           <div>404 Page not Found</div>

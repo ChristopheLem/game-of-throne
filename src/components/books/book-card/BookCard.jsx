@@ -1,4 +1,5 @@
 import React from "react";
+import getIdFromUrlProps from "../../../utils/get-id-from-url-props";
 
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -8,8 +9,8 @@ import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 
 const BookCard = ({ url, name, authors, numberOfPages }) => {
-  const urlArray = url.split("/");
-  const id = urlArray[urlArray.length - 1];
+  const id = getIdFromUrlProps(url);
+
   return (
     <Card sx={{ minWidth: 275, margin: 4 }} elevation={3}>
       <CardContent>

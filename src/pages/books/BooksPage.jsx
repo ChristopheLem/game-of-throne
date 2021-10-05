@@ -1,21 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import useGetAxios from "../../hooks/useGetAxios";
 
 import Loading from "../../components/loading/Loading";
-import BooksComponent from "../../components/books/Books";
+import Books from "../../components/books/Books";
 
 const BooksPage = () => {
-  const { response, loading, error } = useGetAxios("books");
-  const [books, setBooks] = useState(response);
+  const { response: books, loading, error } = useGetAxios("books");
 
-  useEffect(() => {
-    setBooks(response);
-  }, [response]);
-  console.log(response);
   if (loading) return <Loading />;
   if (error) return <p style={{ color: "red" }}>Une erreur est survenue</p>;
 
-  return <BooksComponent books={books} />;
+  return <Books books={books} />;
 };
 
 export default BooksPage;
