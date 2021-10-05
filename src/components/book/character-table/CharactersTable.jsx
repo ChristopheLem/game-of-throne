@@ -9,7 +9,7 @@ import {
   TableCell,
   TableBody,
 } from "@mui/material";
-import CharacterRow from "../character-row/CharacterRow";
+import CharacterRowContainer from "../character-row/CharacterRowContainer";
 
 const CharactersTable = ({
   ids,
@@ -59,7 +59,7 @@ const CharactersTable = ({
           {ids
             .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             .map((id) => (
-              <CharacterRow key={id} id={id} />
+              <CharacterRowContainer key={id} id={id} />
             ))}
         </TableBody>
       </Table>

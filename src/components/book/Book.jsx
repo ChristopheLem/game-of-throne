@@ -1,7 +1,8 @@
 import React from "react";
 
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, Button } from "@mui/material";
 import CharactersTableContainer from "./character-table/CharactersTableContainer";
+import { Link } from "react-router-dom";
 
 const Book = ({ book, title }) => {
   return (
@@ -13,9 +14,13 @@ const Book = ({ book, title }) => {
       >
         {title}
       </Typography>
-      <Grid container justifyContent="center" style={{ margin: "32px" }}>
+      <Grid container justifyContent="center">
         <CharactersTableContainer book={book} />
       </Grid>
+
+      <Button style={{ margin: "32px 0 32px 200px" }}>
+        <Link to="/">Retour</Link>
+      </Button>
     </>
   );
 };

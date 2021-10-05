@@ -1,12 +1,9 @@
 import React from "react";
-import useGetAxios from "../../../hooks/useGetAxios";
 import getAliases from "../../../utils/get-aliases";
 
 import { TableCell, TableRow } from "@mui/material";
 
-const CharacterRow = ({ id, children }) => {
-  const { response } = useGetAxios(`/characters/${id}`);
-
+const CharacterRow = ({ children, response }) => {
   return (
     <>
       {response ? (
