@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Drawer,
   List,
@@ -7,8 +7,11 @@ import {
   ListItemText,
 } from "@mui/material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import FavorisContext from "../../store/context/FavorisContext";
 
 const Layout = ({ children }) => {
+  const [{ books }] = useContext(FavorisContext);
   return (
     <>
       <Drawer
@@ -26,9 +29,13 @@ const Layout = ({ children }) => {
         <List>
           <ListItem button>
             <ListItemIcon>
-              <FavoriteBorderIcon style={{ color: "pink" }} />
+              {books.length > 0 ? (
+                <FavoriteIcon style={{ color: "pink" }} />
+              ) : (
+                <FavoriteBorderIcon style={{ color: "pink" }} />
+              )}
             </ListItemIcon>
-            <ListItemText primary="Favoris" />
+            <ListItemText primary={`Favoris ${books.length || ""}`} />
           </ListItem>
         </List>
       </Drawer>

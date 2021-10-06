@@ -1,5 +1,4 @@
 import React from "react";
-import getIdFromUrlProps from "../../../utils/get-id-from-url-props";
 
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -8,9 +7,7 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 
-const BookCard = ({ url, name, authors, numberOfPages }) => {
-  const id = getIdFromUrlProps(url);
-
+const BookCard = ({ id, name, authors, numberOfPages, children }) => {
   return (
     <Card sx={{ width: 450, margin: 1 }} elevation={3}>
       <CardContent>
@@ -28,6 +25,7 @@ const BookCard = ({ url, name, authors, numberOfPages }) => {
         <Button size="small" sx={{ textTransform: "none" }}>
           <Link to={`/books/${id}`}>Plus de details</Link>
         </Button>
+        {children}
       </CardActions>
     </Card>
   );
