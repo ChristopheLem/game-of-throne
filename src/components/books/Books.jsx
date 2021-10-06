@@ -5,7 +5,7 @@ import BookCard from "./book-card/BookCard";
 
 const Books = ({ books }) => {
   return (
-    <Grid container justifyContent="space-around" sx={{ padding: "24px" }}>
+    <Grid container justifyContent="space-between" sx={{ padding: "24px" }}>
       {books?.length > 0 &&
         books.map((book, i) => (
           <BookCard

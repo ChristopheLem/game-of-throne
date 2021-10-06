@@ -12,7 +12,7 @@ const BookCard = ({ url, name, authors, numberOfPages }) => {
   const id = getIdFromUrlProps(url);
 
   return (
-    <Card sx={{ minWidth: 275, margin: 4 }} elevation={3}>
+    <Card sx={{ width: 450, margin: 1 }} elevation={3}>
       <CardContent>
         <Typography
           variant="h1"

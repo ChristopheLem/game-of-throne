@@ -3,21 +3,17 @@ import getAliases from "../../../utils/get-aliases";
 
 import { TableCell, TableRow } from "@mui/material";
 
-const CharacterRow = ({ children, response }) => {
+const CharacterRow = ({ children, data }) => {
   return (
-    <>
-      {response ? (
-        <TableRow>
-          <TableCell style={{ padding: "8px" }}>{response.name}</TableCell>
-          <TableCell style={{ padding: "8px" }}>{response.gender}</TableCell>
-          <TableCell style={{ padding: "8px" }}>
-            {response.aliases && getAliases(response.aliases)}
-          </TableCell>
-          <TableCell style={{ padding: "8px" }}>{response.playedBy}</TableCell>
-          {children}
-        </TableRow>
-      ) : null}
-    </>
+    <TableRow>
+      <TableCell style={{ padding: "8px" }}>{data.name}</TableCell>
+      <TableCell style={{ padding: "8px" }}>{data.gender}</TableCell>
+      <TableCell style={{ padding: "8px" }}>
+        {data.aliases && getAliases(data.aliases)}
+      </TableCell>
+      <TableCell style={{ padding: "8px" }}>{data.playedBy}</TableCell>
+      {children}
+    </TableRow>
   );
 };
 
