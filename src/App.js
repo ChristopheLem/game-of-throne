@@ -16,9 +16,9 @@ function App() {
             <Route path="/books/:id">
               <Book />
             </Route>
-            {/* <Route>
-          <div>404 Page not Found</div>
-        </Route> */}
+            <Route>
+              <div>404 Page not Found</div>
+            </Route>
           </Switch>
         </Layout>
       </Router>
