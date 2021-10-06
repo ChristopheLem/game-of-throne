@@ -1,11 +1,11 @@
 import React from "react";
 import getAliases from "../../../utils/get-aliases";
 
-import { TableCell, TableRow } from "@mui/material";
+import { TableCell } from "@mui/material";
 
 const CharacterRow = ({ children, data }) => {
   return (
-    <TableRow>
+    <>
       <TableCell style={{ padding: "8px" }}>{data.name}</TableCell>
       <TableCell style={{ padding: "8px" }}>{data.gender}</TableCell>
       <TableCell style={{ padding: "8px" }}>
@@ -13,7 +13,7 @@ const CharacterRow = ({ children, data }) => {
       </TableCell>
       <TableCell style={{ padding: "8px" }}>{data.playedBy}</TableCell>
       {children}
-    </TableRow>
+    </>
   );
 };
 
